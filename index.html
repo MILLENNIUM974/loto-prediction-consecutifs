@@ -1,1 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Système de Prédiction Loto - Analyse Consécutifs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Système de Prédiction Loto</h1>
+            <p>Analyse des Consécutifs - Version Optimisée</p>
+        </div>
+
+        <div class="stats-overview">
+            <div class="stat-card">
+                <h3>Tirages Analysés</h3>
+                <div class="stat-value" id="totalDraws">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Consécutifs Détectés</h3>
+                <div class="stat-value" id="consecutiveCount">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>% Consécutifs</h3>
+                <div class="stat-value" id="consecutivePercent">0%</div>
+            </div>
+            <div class="stat-card">
+                <h3>Grilles Historiques</h3>
+                <div class="stat-value" id="historicalGrids">0</div>
+            </div>
+        </div>
+
+        <div class="upload-section">
+            <h2>📁 Chargement des fichiers</h2>
+            <div class="file-upload">
+                <input type="file" id="fileInput" accept=".csv" />
+                <button class="btn btn-primary" onclick="loadCSVFile()">Analyser</button>
+            </div>
+            <div id="fileInfo"></div>
+        </div>
+
+        <div class="analysis-panel">
+            <h2>📊 Analyse des Consécutifs</h2>
+            <div class="consecutive-stats" id="consecutiveAnalysis">
+                <p>Chargez un fichier CSV pour voir l'analyse...</p>
+            </div>
+        </div>
+
+        <div class="prediction-section">
+            <h2>🎲 Prédictions Intelligentes</h2>
+            <div class="prediction-controls">
+                <button class="btn btn-primary" onclick="generatePredictions()">
+                    Générer 7 Grilles Uniques
+                </button>
+                <button class="btn btn-primary" onclick="generateConsecutiveGrids()">
+                    Mode Consécutifs
+                </button>
+            </div>
+            <div id="predictionResults"></div>
+        </div>
+
+        <div class="results-section" id="resultsSection" style="display: none;">
+            <h2>✨ Résultats</h2>
+            <div id="gridResults"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
